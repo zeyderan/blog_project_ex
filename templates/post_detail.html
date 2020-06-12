@@ -1,0 +1,12 @@
+<!-- templates/post_detail.html -->
+<!-- base.htmli extend eder  -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="post-entry">
+        <!-- post_detail ismi viewdan geliyor
+        öyle tanımladı -->
+        <h2>{{post_detail.title}}</h2>
+        <p>{{post_detail.body}}</p>
+    </div>
+{% endblock content %}
