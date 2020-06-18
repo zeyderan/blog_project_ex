@@ -7,7 +7,7 @@ body {
     margin-bottom: 2rem;
     display: flex;
     }
-    header h1 a {
+    header.nav-left div h1 a {
     color: red;
     text-decoration: none;
     }
@@ -16,7 +16,6 @@ body {
     }
     .nav-right {
     display: flex;
-    padding-top: 2rem;
     }
     .post-entry {
     margin-bottom: 2rem;
