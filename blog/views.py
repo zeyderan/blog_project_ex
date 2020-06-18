@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.urls import reverse_lazy # rediret için kullanılır
 from .models import Post
 
 # Create your views here.
@@ -30,3 +31,19 @@ class BlogCreateView(CreateView):
 
     #post modelinin içerisindeki fieldları alır
     fields = ['title','author','body']
+
+class BlogUpdateView(UpdateView):
+    # kullanılacak model
+    model = Post
+    # kullanılacak template
+    template_name = 'post_edit.html'
+    # template üzeride kullanılacak fieldlar
+    fields = ['title','body']
+
+class BlogDeleteView(DeleteView):
+    model = Post
+
+    template_name = 'post_delete.html'
+
+    success_url = reverse_lazy('home')
+
